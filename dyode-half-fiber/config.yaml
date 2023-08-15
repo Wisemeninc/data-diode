@@ -2,7 +2,7 @@ config_name: "Data Diode"
 config_version: 1.0
 config_date: 06-06-2019
 
-bitrate: 300 # maximum bitrate
+bitrate: 700 # maximum bitrate
 multicast: # comment to disable
   group: 224.0.2.5
 
@@ -34,7 +34,7 @@ modules:
   repository_diode:
     type: folder
     port: 9600
-    bitrate: 100
+    bitrate: 500
     timeout: 10
     fec: "8x8"
     in: /data/repo
