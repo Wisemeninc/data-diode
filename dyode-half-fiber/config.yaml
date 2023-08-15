@@ -10,15 +10,15 @@ dyode_in:
   #external:
   #  ip: 192.168.1.2 # use for udp-redirect. comment for listen on all ip range (equal to ip 0.0.0.0)
   internal:
-    ip: 10.0.0.1
-    mac: 40:16:7e:a9:fb:7a
+    ip: 10.0.1.1
+    mac: 00:e0:4c:22:47:76
     interface: enp3s0
 dyode_out:
   #external:
   #  ip: 192.168.1.2
   internal:
-    ip: 10.0.0.2
-    mac: 40:16:7e:a9:fc:0f
+    ip: 10.0.1.2
+    mac: 00:e0:4c:22:47:26
     interface: enp3s0
 
 modules:

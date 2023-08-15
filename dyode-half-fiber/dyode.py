@@ -54,7 +54,7 @@ def parse_manifest(file_path, in_path, out_path):
 def check_hash_process(queue):
     while True:
         temp_file, hash_list, success_log, failure_log = queue.get()
-        # log.debug("check hash for :: %s at %s" % (temp_file, datetime.datetime.now()))
+        log.debug("check hash for :: %s at %s" % (temp_file, datetime.datetime.now()))
         if hash_list is None:
             if temp_file is None:
                 break
