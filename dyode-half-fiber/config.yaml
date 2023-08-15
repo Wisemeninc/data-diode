@@ -25,7 +25,7 @@ modules:
   diode_1:
     type: folder
     port: 9700
-    bitrate: 50 # in Mb/s
+    bitrate: 100 # in Mb/s
     timeout: 20  # in second
     fec: "4x4"   # forward error correction
     in: /data/diode
@@ -34,7 +34,7 @@ modules:
   repository_diode:
     type: folder
     port: 9600
-    bitrate: 50
+    bitrate: 100
     timeout: 10
     fec: "8x8"
     in: /data/repo
