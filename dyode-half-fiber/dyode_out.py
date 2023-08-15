@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
     # Iterate on modules
     modules = config.get('modules')
-    for module, properties in modules.iteritems():
+    for module, properties in modules.items():
         # print module
         if 'multicast' in config and 'group' in config['multicast']:
             properties['ip_multicast'] = True

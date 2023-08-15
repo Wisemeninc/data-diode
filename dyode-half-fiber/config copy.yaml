@@ -41,3 +41,12 @@ modules:
     out: /data/repo
     temp: /data/temp
     delete: no # default yes
+  syslog_1:
+    type: udp-redirect
+    port: 514     # use instate all port
+    # port:
+      #src: 514 # check for user access
+      #int: 514 # internal port, if not present use src_port
+      #dst: 514
+    listen_ip: 0.0.0.0
+    destination_ip: 1.2.3.4 # use only on dyode_out config

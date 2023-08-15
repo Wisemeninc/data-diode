@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from pymodbus.client.sync import ModbusTcpClient as ModbusClient
+from pymodbus.client import ModbusTcpClient as ModbusClient
 import os
 import sys
 import time
@@ -19,13 +19,13 @@ import dyode
 #---------------------------------------------------------------------------#
 # import the modbus libraries we need
 #---------------------------------------------------------------------------#
-from pymodbus.server.async import StartTcpServer
+from pymodbus.server import StartAsyncTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock
 from pymodbus.datastore import ModbusSlaveContext, ModbusServerContext
 from pymodbus.transaction import ModbusRtuFramer, ModbusAsciiFramer
 from twisted.internet.task import LoopingCall
-from ConfigParser import SafeConfigParser
+from configparser import SafeConfigParser
 import subprocess
 
 #--------------------------------------------------------------------------#

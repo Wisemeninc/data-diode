@@ -9,7 +9,7 @@ import struct
 import pickle
 import math
 from socket import *
-from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import asyncore
 import pyinotify
 import dyode
