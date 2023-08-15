@@ -2,7 +2,7 @@ config_name: "Data Diode"
 config_version: 1.0
 config_date: 06-06-2019
 
-bitrate: 100 # maximum bitrate
+bitrate: 300 # maximum bitrate
 multicast: # comment to disable
   group: 224.0.2.5
 
