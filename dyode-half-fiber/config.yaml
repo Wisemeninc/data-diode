@@ -34,8 +34,8 @@ modules:
   repository_diode:
     type: folder
     port: 9600
-    bitrate: 500
-    timeout: 10
+    bitrate: 250
+    timeout: 15
     fec: "8x8"
     in: /data/repo
     out: /data/repo
