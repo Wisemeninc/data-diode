@@ -2,9 +2,9 @@ config_name: "Data Diode"
 config_version: 1.0
 config_date: 06-06-2019
 
-bitrate: 900 # maximum bitrate
-#multicast: # comment to disable
-#  group: 255.2.2.5
+bitrate: 500 # maximum bitrate
+multicast: # comment to disable
+  group: 255.2.2.5
 
 dyode_in:
   #external:
@@ -25,8 +25,8 @@ modules:
   diode_1:
     type: folder
     port: 9700
-    bitrate: 300 # in Mb/s
-    timeout: 10  # in second
+    bitrate: 10 # in Mb/s
+    timeout: 20  # in second
     fec: "4x4"   # forward error correction
     in: /data/diode
     out: /data/diode
@@ -34,8 +34,8 @@ modules:
   repository_diode:
     type: folder
     port: 9600
-    bitrate: 300
-    timeout: 5
+    bitrate: 10
+    timeout: 10
     fec: "8x8"
     in: /data/repo
     out: /data/repo
