@@ -85,7 +85,7 @@ def check_hash_process(queue):
             log.info('File Available: ' + f)
             with open(failure_log, 'at') as f: # remove b in (ab)
                 #f.write(h + ' ' + f + '\n')
-                f.write(h)
+                f.write(h + '' + f)
     queue.put(None)
 
 
