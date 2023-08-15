@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import asyncore
+import asyncio
 import logging
 import multiprocessing
 import pyinotify
@@ -37,12 +38,13 @@ def watch_folder(properties):
     excl_lst = ['^/.*\\.tmp$']
     excl = pyinotify.ExcludeFilter(excl_lst)
     wm = pyinotify.WatchManager()
+    log.info('Pynotify_watchmanager')
     mask = pyinotify.IN_CLOSE_WRITE
-    notifier = pyinotify.AsyncNotifier(wm, EventHandler())
+    log.info('Pynotify_inclose')
+    notifier0 = pyinotify.AsyncNotifier(wm, EventHandler())
     wdd = wm.add_watch(properties['in'], mask, rec=True, auto_add=True, exclude_filter=excl)
     log.debug('watching :: %s' % properties['in'])
     asyncore.loop()
-
 
 def udp_redirect(properties):
     log.debug('Function "udp-redirect" launched with params %s: ' % properties)
@@ -112,7 +114,7 @@ if __name__ == '__main__':
     # Iterate on modules
     modules = config.get('modules')
     modules_nb_bitrate = 0
-    for module, properties in modules.iteritems():
+    for module, properties in modules.items():
         if 'bitrate' in properties:
             MAX_BITRATE = MAX_BITRATE - properties['bitrate']
         else:
@@ -120,7 +122,7 @@ if __name__ == '__main__':
     if MAX_BITRATE < 0:
         log.error('Sum of bitrate is bigger than the maximum defined !')
         exit(1)
-    for module, properties in modules.iteritems():
+    for module, properties in modules.items():
         if 'multicast' in config and 'group' in config['multicast']:
             properties['ip_multicast'] = True
             properties['ip_out'] = config['multicast']['group']

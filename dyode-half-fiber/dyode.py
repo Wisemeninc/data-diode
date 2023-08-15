@@ -190,7 +190,7 @@ def write_manifest(dirs, files, files_hash, manifest_filename, root, new):
         data['files'].append([f.replace(root, new, 1), files_hash[f]])
         log.debug(f + ' :: ' + files_hash[f])
 
-    with open(manifest_filename, 'wb') as configfile:
+    with open(manifest_filename, 'w') as configfile: # remove b in (wb)
         json.dump(data, configfile)
 
 
