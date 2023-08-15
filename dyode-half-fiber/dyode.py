@@ -250,7 +250,7 @@ def hash_file(file):
     # TODO: use 'sha256sum' command for speedup ?
     BLOCKSIZE = 65536
     hasher = hashlib.sha256()
-    with open(file, 'rb') as afile:
+    with open(file, 'r') as afile: # remove b in (rb)
         buf = afile.read(BLOCKSIZE)
         while len(buf) > 0:
             hasher.update(buf)
