@@ -4,7 +4,7 @@ config_date: 06-06-2019
 
 bitrate: 100 # maximum bitrate
 multicast: # comment to disable
-  group: 255.2.2.5
+  group: 224.0.2.5
 
 dyode_in:
   #external:
