@@ -184,4 +184,4 @@ def modbus_master(module, properties):
     time = 1  # 5 seconds delay
     loop = LoopingCall(f=modbus_master_update, a=(module, properties, context))
     loop.start(time, now=False)  # initially delay by time
-    StartTcpServer(context, identity=identity, address=("0.0.0.0", properties['port_out']))
+    StartAsyncTcpServer(context, identity=identity, address=("0.0.0.0", properties['port_out']))
