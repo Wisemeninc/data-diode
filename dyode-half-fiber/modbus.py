@@ -166,8 +166,8 @@ def modbus_master(module, properties):
     # --------------------------------------------------------------------------#
     store = ModbusSlaveContext(
         co=ModbusSequentialDataBlock(0, [0] * 100),
-        hr=ModbusSequentialDataBlock(0, [0] * 100))
-    context = ModbusServerContext(slaves= store2, single=True)
+        hr=ModbusSequentialDataBlock(0, [40000] * 100))
+    context = ModbusServerContext(slaves=store, single=True)
 
     # --------------------------------------------------------------------------#
     # initialize the server information
