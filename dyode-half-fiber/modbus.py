@@ -167,7 +167,7 @@ def modbus_master(module, properties):
     store = ModbusSlaveContext(
         co=ModbusSequentialDataBlock(0, [0] * 100),
         hr=ModbusSequentialDataBlock(0, [0] * 100))
-    context = ModbusServerContext(slaves=store, single=True)
+    context = ModbusServerContext(slaves= store2, single=True)
 
     # --------------------------------------------------------------------------#
     # initialize the server information
@@ -184,7 +184,7 @@ def modbus_master(module, properties):
     # run the server you want
     #--------------------------------------------------------------------------#
     #StartTcpServer(context, identity=identity, address=('', 502))
-    StartTcpServer(identity=identity, address=('', 502))
+    StartTcpServer(context, identity=identity, address=('', 502))
     time = 1  # 5 seconds delay
     loop = LoopingCall(f=modbus_master_update, a=(module, properties, context))
     loop.start(time, now=False)  # initially delay by time
