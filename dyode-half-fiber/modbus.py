@@ -19,7 +19,7 @@ import dyode
 #---------------------------------------------------------------------------#
 # import the modbus libraries we need
 #---------------------------------------------------------------------------#
-from pymodbus.server import StartAsyncTcpServer
+from pymodbus.server import StartAsyncTcpServer, StartTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock
 from pymodbus.datastore import ModbusSlaveContext, ModbusServerContext
@@ -184,4 +184,4 @@ def modbus_master(module, properties):
     time = 1  # 5 seconds delay
     loop = LoopingCall(f=modbus_master_update, a=(module, properties, context))
     loop.start(time, now=False)  # initially delay by time
-    StartAsyncTcpServer(context, identity=identity, address=("0.0.0.0", properties['port_out']))
+    StartTcpServer(context, identity=identity, address=("0.0.0.0", properties['port_out']))
