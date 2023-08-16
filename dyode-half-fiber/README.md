@@ -1,3 +1,6 @@
+Update to support python3
+
+
 # DYODE : Do Your Own DyodE
 
 A low-cost (~200 €) data diode aimed at Industrial Control Systems.
