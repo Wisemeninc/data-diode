@@ -45,8 +45,8 @@ modules:
     type: modbus
     ip: 192.168.2.40
     registers:
-      - 300001-300010
+      - 30000-30010
     coils:
-      - 0-10
+      - 00000-00010
     port: 502
     port_out: 502

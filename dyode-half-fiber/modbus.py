@@ -66,8 +66,8 @@ def get_modbus(properties):
         for i in properties['coils']:
             coil_start_nb = i.split('-')[0]
             coil_end_nb = i.split('-')[1]
-            log.debug('Coil start number : ' + register_start_nb)
-            log.debug('Coil end number : ' + register_end_nb)
+            log.debug('Coil start number : ' + coil_start_nb)
+            log.debug('Coil end number : ' + coil_end_nb)
             coil_count = int(coil_end_nb) - int(coil_start_nb)
             log.debug('Number of coils to read : ' + str(coil_count))
             rr = client.read_coils(int(coil_start_nb), coil_count, unit=0x01)
