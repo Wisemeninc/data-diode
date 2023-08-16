@@ -86,7 +86,7 @@ def get_modbus(properties):
 
 
 def modbus_send(data, properties):
-    port = properties['port']
+    port = properties['502']
     buffer_size = 2048
     addr = ('10.0.1.2', port)
     modbus_data = pickle.dumps(data)
@@ -184,4 +184,4 @@ async def modbus_master(module, properties):
     time = 1  # 5 seconds delay
     loop = LoopingCall(f=modbus_master_update, a=(module, properties, context))
     loop.start(time, now=False)  # initially delay by time
-    await StartAsyncTcpServer(context, identity=identity, address=("192.168.2.189", 5020))
+    StartAsyncTcpServer(context, identity=identity, address=("0.0.0.0", 502))
