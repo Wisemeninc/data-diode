@@ -1,11 +1,11 @@
 Working on updating the dyode-half-fiber part to python3 
 
-Done:
-Moving files between proxys
+## Done:
+* Moving files between proxys
 
-Todo: 
-Modbus
-OPC UA
+## Todo: 
+* Modbus
+* OPC UA
 
 
 # Data Diode
