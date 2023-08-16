@@ -165,17 +165,17 @@ def modbus_master(module, properties):
     # initialize your data store
     # --------------------------------------------------------------------------#
     store = ModbusSlaveContext(
-        co=ModbusSequentialDataBlock(0, [0] * 100),
-        hr=ModbusSequentialDataBlock(0, [40000] * 100))
+        co=ModbusSequentialDataBlock(0, [0] * 20),
+        hr=ModbusSequentialDataBlock(0, [0] * 20))
     block1 = ModbusSequentialDataBlock(0x00, [0]*0x0F)
     block2 = ModbusSequentialDataBlock(0x00, [0]*0x1F)
     store2 = ModbusSlaveContext(hr=block1,ir=block2)    
-    #context = ModbusServerContext(slaves=store, single=True)
+    context = ModbusServerContext(slaves=store, single=True)
 
     slaves  = {
                        0x01: store2,
                     }
-    context = ModbusServerContext(slaves=slaves, single=True)
+    #context = ModbusServerContext(slaves=slaves, single=True)
     # --------------------------------------------------------------------------#
     # initialize the server information
     # --------------------------------------------------------------------------#
