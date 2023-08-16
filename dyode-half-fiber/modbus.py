@@ -170,8 +170,12 @@ def modbus_master(module, properties):
     block1 = ModbusSequentialDataBlock(0x00, [717]*0x0F)
     block2 = ModbusSequentialDataBlock(0x10, [323]*0x1F)
     store2 = ModbusSlaveContext(hr=block1,ir=block2)    
-    context = ModbusServerContext(slaves=store2, single=True)
+    #context = ModbusServerContext(slaves=store2, single=True)
 
+    slaves  = {
+                       0x01: store2,
+                    }
+    context = ModbusServerContext(slaves=slaves, single=False)
     # --------------------------------------------------------------------------#
     # initialize the server information
     # --------------------------------------------------------------------------#
