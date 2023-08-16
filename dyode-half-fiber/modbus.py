@@ -86,9 +86,10 @@ def get_modbus(properties):
 
 
 def modbus_send(data, properties):
-    port = properties['502']
+    port = properties['port']
     buffer_size = 2048
     addr = ('10.0.1.2', port)
+    log.debug('Sending on port' % properties['port'])
     modbus_data = pickle.dumps(data)
     data_length = len(modbus_data)
 
