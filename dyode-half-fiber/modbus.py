@@ -175,7 +175,7 @@ def modbus_master(module, properties):
     slaves  = {
                        0x01: store2,
                     }
-    context = ModbusServerContext(slaves=slaves, single=False)
+    context = ModbusServerContext(slaves=slaves, single=True)
     # --------------------------------------------------------------------------#
     # initialize the server information
     # --------------------------------------------------------------------------#
