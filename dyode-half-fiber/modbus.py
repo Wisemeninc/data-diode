@@ -170,7 +170,7 @@ def modbus_master(module, properties):
     block1 = ModbusSequentialDataBlock(0x00, [717]*0x0F)
     block2 = ModbusSequentialDataBlock(0x10, [323]*0x1F)
     store2 = ModbusSlaveContext(hr=block1,ir=block2)    
-    #context = ModbusServerContext(slaves=store2, single=True)
+    #context = ModbusServerContext(slaves=store, single=True)
 
     slaves  = {
                        0x01: store2,
@@ -195,4 +195,5 @@ def modbus_master(module, properties):
     time = 1  # 5 seconds delay
     loop = LoopingCall(f=modbus_master_update, a=(module, properties, context))
     loop.start(time, now=False)  # initially delay by time
-    StartTcpServer(context, identity=identity, address=('', 502))
+    server = StartTcpServer(context, identity=identity, address=('0.0.0.0', 502))
+    server.start_server()
