@@ -1,3 +1,13 @@
+Working on updating the dyode-half-fiber part to python3 
+
+Done:
+Moving files between proxys
+
+Todo: 
+Modbus
+OPC UA
+
+
 # DYODE : Do Your Own Diode
 
 A DIY, low-cost data diode for ICS

@@ -1,3 +1,13 @@
+Working on updating the dyode-half-fiber part to python3 
+
+Done:
+Moving files between proxys
+
+Todo: 
+Modbus
+OPC UA
+
+
 # Data Diode
 
 This project improve [data-diode](https://github.com/wavestone-cdt/dyode) project for better service in fast environment.
