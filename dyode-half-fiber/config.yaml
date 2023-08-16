@@ -41,3 +41,10 @@ modules:
     out: /data/repo
     temp: /data/temp
     delete: no # default yes
+  "Modbus PLC 1"
+	  type:modbus
+	  ip: 192.168.2.40
+	  registers: 400001-400010
+	  coils: 0-10
+	  port: 502
+	  port_out: 502
