@@ -41,12 +41,12 @@ modules:
     out: /data/repo
     temp: /data/temp
     delete: no # default yes
-  ModbusPLC:
-    type: modbus
-    ip: 192.168.2.40
-    registers:
-      - 30000-30010
-    coils:
-      - 00000-00010
-    port: 9000
-    port_out: 502
+      #  ModbusPLC:
+      #    type: modbus
+      #    ip: 192.168.2.40
+      #    registers:
+      #      - 30000-30010
+      #    coils:
+      #      - 00000-00010
+      #    port: 9000
+      #    port_out: 502
