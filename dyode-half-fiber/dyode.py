@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+1# -*- coding: utf-8 -*-
 
 import datetime
 import errno
@@ -162,7 +162,7 @@ def wait_for_file(queue, params):
 # Send a file using udpcast
 def send_file(file_path, interface, ip_out, port_base, max_bitrate):
     # 10.0.1.2
-    command = 'udp-sender --async --fec 8x8/64 --max-bitrate {:0.0f}m '.format(max_bitrate) \
+    command = 'udp-sender --async --fec 8x8/128 --max-bitrate {:0.0f}m '.format(max_bitrate) \
               + '--mcast-rdv-addr {0} --mcast-data-addr {0} '.format(ip_out) \
               + '--portbase {0} --autostart 1 '.format(port_base) \
               + "--interface {0} -f '{1}'".format(interface, file_path)
