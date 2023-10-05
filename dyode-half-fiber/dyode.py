@@ -165,8 +165,7 @@ def send_file(file_path, interface, ip_out, port_base, max_bitrate):
     command = 'udp-sender --async --fec 16x8/128 --max-bitrate {:0.0f}m '.format(max_bitrate) \
               + '--mcast-rdv-addr {0} --mcast-data-addr {0} '.format(ip_out) \
               + '--portbase {0} --autostart 1 '.format(port_base) \
-              + "--interface {0} -f '{1}'".format(interface, file_path) \
-              + '--min-wait 5'
+              + "--min-wait 5 --interface {0} -f '{1}'".format(interface, file_path)
     log.debug(command)
     (output, err) = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True).communicate()
     time.sleep(1.5)
