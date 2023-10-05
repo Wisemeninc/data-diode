@@ -27,7 +27,7 @@ modules:
     port: 9700
     bitrate: 10 # in Mb/s
     timeout: 20  # in second
-    fec: "4x4"   # forward error correction
+    fec: "4x4/128"   # forward error correction
     in: /data/diode
     out: /data/diode
     temp: /data/temp
@@ -36,7 +36,7 @@ modules:
     port: 9600
     bitrate: 1
     timeout: 20
-    fec: "8x8"
+    fec: "8x8/128"
     in: /data/repo
     out: /data/repo
     temp: /data/temp
